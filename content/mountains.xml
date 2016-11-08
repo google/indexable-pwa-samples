@@ -1,0 +1,41 @@
+<!--
+/**
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><?xml version="1.0"?>
+<document>
+  <title>Mountains</title>
+  <date></date>
+  <canonical>/content/mountains</canonical>
+  <description>A page about mountains.</description>
+  <thumbnailPath>/images/mountains.jpg</thumbnailPath>
+  <thumbnailWidth>1024</thumbnailWidth>
+  <thumbnailHeight>611</thumbnailHeight>
+  <copyright>JCMU</copyright>
+  <content><![CDATA[
+
+<amp-img src="/images/mountains.jpg" width="1024" height="611" layout="responsive"></amp-img>
+
+<p>
+  Mountains dolor sit amet, consectetur adipiscing elit. Maecenas lacinia, ligula et porttitor feugiat, ligula quam tempor augue, a tempus dui sapien quis ante.
+</p>
+<p>
+  Sed porta luctus placerat. Donec auctor dapibus diam, id vehicula justo feugiat sed. Aliquam finibus mollis porta.
+</p>
+<p>
+  In eu tortor orci. Morbi justo sapien, porta non rutrum eu, imperdiet ut massa. Vestibulum varius vitae nulla et tempor.
+</p>
+]]></content>
+</document>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html <% if (ampRequested) { %>amp<% } %> lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%- page.title %></title>
+
+    <meta name="google-site-verification" content="<%- serverConfig.googleSiteVerificationToken %>" />
+
+    <% if (ampRequested) { %>
+      <link rel="canonical" href="<%- canonicalUrl %>" />
+    <% } else { %>
+      <link rel="canonical" href="<%- canonicalUrl %>" />
+      <link rel="amphtml" href="<%- ampUrl %>" />
+    <% } %>
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#80dbff">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!-- Schema.org Search Engine Meta Data -->
+    <script type="application/ld+json" id="schema-data">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://google.com/article"
+        },
+        "headline": "<%- page.title %>",
+        "image": {
+          "@type": "ImageObject",
+          "url": "<%- siteUrl %><%- page.thumbnailPath %>",
+          "width": <%- page.thumbnailWidth %>,
+          "height": <%- page.thumbnailHeight %>
+        },
+        "datePublished": "2015-02-05T08:00:00+08:00",
+        "dateModified": "2015-02-05T09:20:00+08:00",
+        "author": {
+          "@type": "Person",
+          "name": "John Doe"
+        },
+         "publisher": {
+          "@type": "Organization",
+          "name": "ACME Industries",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "<%- siteUrl %>/images/logo.jpg",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "description": "<%- page.description %>"
+      }
+    </script>
+
+    <!-- Open Graph Meta Data -->
+    <meta property="og:title" content="<%- page.title %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<%- siteUrl %><%- page.canonical %>" />
+    <meta property="og:image" content="<%- siteUrl %><%- page.metaImage %>" />
+
+    <!-- Twitter Meta Data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitterAccount" />
+    <meta name="twitter:title" content="<%- page.title %>" />
+    <meta name="twitter:description" content="View the album on Flickr." />
+    <meta name="twitter:image" content="<%- siteUrl %><%- page.metaImage %>" />
+
+    <!-- Boilerplate AMP CSS -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <% if (ampRequested) { %>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+      <style amp-custom><%- ampCSS %></style>
+      <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <% } else { %>
+      <script async src="/javascripts/amp-core.js"></script>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+
+      <script>
+        var serverConfig = <%- JSON.stringify(serverConfig) %>;
+      </script>
+      <script src="/javascripts/core.js"></script>
+    <% } %>
+  </head>
+  <body>
+    <% if (ampRequested) { %>
+      <amp-install-serviceworker
+        src="<%- serviceWorkerUrl %>"
+        layout="nodisplay">
+      </amp-install-serviceworker>
+    <% } %>
+
+    <div id="wrapper">
