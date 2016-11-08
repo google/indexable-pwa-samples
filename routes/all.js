@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
@@ -54,7 +54,10 @@ console.log('Server Configuration:', serverConfig);
 var swPrecacheConfig = require('./../sw-precache-config-' +
     serverConfig.renderMode + '.js');
 swPrecache.write(path.join(__dirname,
-    '/../public/generated-service-worker.js'), swPrecacheConfig);
+    '/../public/generated-service-worker.js'), swPrecacheConfig,
+    function(err) {
+  if (err) console.log(err);
+});
 
 // Cache the CSS in memory to embed into AMP documents where necessary:
 var globalCSS = '';

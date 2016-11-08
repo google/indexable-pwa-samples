@@ -18,7 +18,8 @@ module.exports = {
   "staticFileGlobs": [
     "public/javascripts/*",
     "public/stylesheets/*",
-    "public/images/*"
+    "public/images/*",
+    "bower_components/*"
   ],
 
   "stripPrefix": "public",

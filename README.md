@@ -30,6 +30,17 @@ To deploy a particular configuration to App Engine specify the yaml file:
 
 Use app.yaml to set environment variables to override the config.js file.
 
+Example .yaml file:
+
+~~~~
+runtime: nodejs
+vm: true
+env_variables:
+  AMP_MODE: disabled
+  RENDER_MODE: hybrid
+  UPDATE_MODE: json
+~~~~
+
 ## Configuration Patterns
 
 Configure config.js:

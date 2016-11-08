@@ -1,6 +1,6 @@
 {
   "ampMode": "disabled",
-  "renderMode": "hybrid",
+  "renderMode": "client",
   "updateMode": "json",
   "googleSiteVerificationToken": ""
 }

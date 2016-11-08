@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 module.exports = {
   "staticFileGlobs": [
     "public/javascripts/*",
     "public/stylesheets/*",
-    "public/images/*"
+    "public/images/*",
+    "bower_components/*"
   ],
 
   "stripPrefix": "public",
@@ -37,8 +38,7 @@ module.exports = {
       "views/content.ejs",
       "views/footer.ejs",
       "views/header.ejs",
-      "views/site-navigation.ejs",
-      "views/json.ejs"
+      "views/site-navigation.ejs"
     ]
   }
 };
