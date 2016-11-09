@@ -14,6 +14,13 @@ Install this package via npm:
 
 `npm install`
 
+Install bower and the fetch polyfill to support Safari:
+
+~~~~
+npm install bower
+bower install fetch
+~~~~
+
 Run the server via:
 
 `node server.js`
