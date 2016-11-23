@@ -213,6 +213,11 @@ document.addEventListener('click', function(e) {
     return;
   }
 
+  if (e.target.classList.contains('external')) {
+    // Links designed to be regularly traversed.
+    return;
+  }
+
   if (e.target.tagName == 'A') {
     e.preventDefault();
 

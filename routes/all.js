@@ -99,6 +99,7 @@ function renderPage(req, res, next, templateData) {
   // Attach the server config
   templateData.serverConfig = serverConfig;
   templateData.siteUrl = siteUrl;
+  templateData.ampEnabled = (serverConfig.ampMode == 'enabled');
 
   // If the request is for JSON then don't render the content in
   // the HTML template

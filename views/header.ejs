@@ -10,7 +10,10 @@
       <link rel="canonical" href="<%- canonicalUrl %>" />
     <% } else { %>
       <link rel="canonical" href="<%- canonicalUrl %>" />
-      <link rel="amphtml" href="<%- ampUrl %>" />
+
+      <% if (ampEnabled) { %>
+        <link rel="amphtml" href="<%- ampUrl %>" />
+      <% } %>
     <% } %>
 
     <link rel="manifest" href="/manifest.json">
